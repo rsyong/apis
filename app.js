@@ -18,6 +18,6 @@ urlHelper.setRequestUrl(app);
 // //配置服务端口
 var server = app.listen(3002, function () {
 
-    console.log("服务已启动")
+    console.log("服务已启动3002")
 
 })
