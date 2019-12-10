@@ -10,7 +10,7 @@ module.exports=(req,send,next)=>{
     }
     if(!body.phone)return toSend("0","缺少关键字！");
     conn.connect();
-    conn.query(`SELECT * FROM project WHERE userphone = ${body.phone}`,(err,res)=>{
+    conn.query(`SELECT * FROM project WHERE userphone = '${body.phone}'`,(err,res)=>{
         if(err) return toSend("0",'无数据');
         return toSend("1","查询成功",res);
     })
