@@ -15,7 +15,7 @@ module.exports=(req,send)=>{
     conn.query(`SELECT * FROM ground where project_id = '${body.projectid}'`,(err,res)=>{
         if(err) return toSend("0","添加失败");
         if(res.length==0){
-            conn.query(`INSERT INTO ground (ground_name,project_id) VALUES ('所有分组','${body.projectid}')`,(err,res)=>{
+            conn.query(`INSERT INTO ground (ground_name,project_id) VALUES ('默认分组','${body.projectid}')`,(err,res)=>{
                 if(err) return toSend("02","添加失败");
                 conn.query(`SELECT * FROM ground where project_id = '${body.projectid}'`,(err,res)=>{
                     if(err) return toSend("03","添加失败");
